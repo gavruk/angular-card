@@ -5,7 +5,15 @@ Angular directive for card https://github.com/jessepollak/card
 
 ![screen shot 2014-12-20 at 4 37 52 pm](https://cloud.githubusercontent.com/assets/507195/5514998/9a252c80-8866-11e4-81ad-dea3dc5e6870.png)
 
-##Example
+## Demo
+
+http://jessepollak.github.io/card/
+
+## Installation
+
+`bower install angular-card`
+
+##Usage
 
 ```html
 <form action="#"
