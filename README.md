@@ -42,7 +42,7 @@ http://jessepollak.github.io/card/
 angular.module('app', ['gavruk.card'])
 .controller('ExampleCtrl', ['$scope', function($scope) {
 
-  var card = {
+  $scope.card = {
     name: 'Mike Brown',
     number: '5555 4444 3333 1111',
     expiry: '11 / 2020',
