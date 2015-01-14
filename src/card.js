@@ -77,7 +77,10 @@ angular.module('gavruk.card', [])
     link: function (scope, element, attributes, ctrls) {
       cardCtrl = ctrls[0];
       cardCtrl.numberInput = element;
-      scope.$watch('ngModel', function() {
+      scope.$watch('ngModel', function(newVal, oldVal) {
+        if (oldVal === newVal) {
+          return;
+        }
         element.trigger('change');
       });
     }
@@ -94,7 +97,10 @@ angular.module('gavruk.card', [])
     link: function (scope, element, attributes, ctrls) {
       cardCtrl = ctrls[0];
       cardCtrl.nameInput = element;
-      scope.$watch('ngModel', function() {
+      scope.$watch('ngModel', function(newVal, oldVal) {
+        if (oldVal === newVal) {
+          return;
+        }
         element.trigger('change');
       });
     }
@@ -111,7 +117,10 @@ angular.module('gavruk.card', [])
     link: function (scope, element, attributes, ctrls) {
       cardCtrl = ctrls[0];
       cardCtrl.expiryInput = element;
-      scope.$watch('ngModel', function() {
+      scope.$watch('ngModel', function(newVal, oldVal) {
+        if (oldVal === newVal) {
+          return;
+        }
         element.trigger('change');
       });
     }
@@ -128,7 +137,10 @@ angular.module('gavruk.card', [])
     link: function (scope, element, attributes, ctrls) {
       cardCtrl = ctrls[0];
       cardCtrl.cvcInput = element;
-      scope.$watch('ngModel', function() {
+      scope.$watch('ngModel', function(newVal, oldVal) {
+        if (oldVal === newVal) {
+          return;
+        }
         element.trigger('change');
       });
     }
