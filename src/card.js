@@ -78,6 +78,9 @@ angular.module('gavruk.card', [])
       cardCtrl = ctrls[0];
       cardCtrl.numberInput = element;
       scope.$watch('ngModel', function(newVal, oldVal) {
+        if (!oldVal && !newVal) {
+          return;
+        }
         if (oldVal === newVal && !newVal) {
           return;
         }
@@ -98,6 +101,9 @@ angular.module('gavruk.card', [])
       cardCtrl = ctrls[0];
       cardCtrl.nameInput = element;
       scope.$watch('ngModel', function(newVal, oldVal) {
+        if (!oldVal && !newVal) {
+          return;
+        }
         if (oldVal === newVal && !newVal) {
           return;
         }
@@ -118,6 +124,9 @@ angular.module('gavruk.card', [])
       cardCtrl = ctrls[0];
       cardCtrl.expiryInput = element;
       scope.$watch('ngModel', function(newVal, oldVal) {
+        if (!oldVal && !newVal) {
+          return;
+        }
         if (oldVal === newVal && !newVal) {
           return;
         }
@@ -138,6 +147,9 @@ angular.module('gavruk.card', [])
       cardCtrl = ctrls[0];
       cardCtrl.cvcInput = element;
       scope.$watch('ngModel', function(newVal, oldVal) {
+        if (!oldVal && !newVal) {
+          return;
+        }
         if (oldVal === newVal && !newVal) {
           return;
         }
