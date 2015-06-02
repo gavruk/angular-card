@@ -27,17 +27,17 @@ http://jessepollak.github.io/card/
   data-messages="cardMessages">
 
   <div>
-      <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" />
+    <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" />
 
-      <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
+    <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
   </div>
   <div>
-      <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
+    <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
 
-      <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
+    <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
 
-      <input type="button" value="Change card" data-ng-click="changeCard()" />
-      <input type="button" value="Clear" data-ng-click="clear()" />
+    <input type="button" value="Change card" data-ng-click="changeCard()" />
+    <input type="button" value="Clear" data-ng-click="clear()" />
   </div>
   
 </form>
