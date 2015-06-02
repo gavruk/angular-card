@@ -34,15 +34,13 @@ angular.module('gavruk.card', [])
       var messages = angular.extend(defaultMessages, scope.messages);
       var options = angular.extend(defaultOptions, scope.options);
 
-      $(element).card({
+
+      var opts = {
         // a selector or jQuery object for the container
         // where you want the card to appear
         container: scope.cardContainer, // *required*
 
-        numberInput: cardCtrl.numberInput,
-        expiryInput: cardCtrl.expiryInput,
-        cvcInput: cardCtrl.cvcInput,
-        nameInput: cardCtrl.nameInput,
+        formSelectors: {},
 
         width: scope.width || 350,
 
@@ -62,7 +60,22 @@ angular.module('gavruk.card', [])
 
         formatting: options.formatting, // optional - default true
         debug: options.debug // if true, will log helpful messages for setting up Card
-      });
+      };
+
+      if (cardCtrl.numberInput && cardCtrl.numberInput.length > 0) {
+        opts.formSelectors.numberInput = 'input[name="' + cardCtrl.numberInput[0].name + '"]';
+      }
+      if (cardCtrl.expiryInput && cardCtrl.expiryInput.length > 0) {
+        opts.formSelectors.expiryInput = 'input[name="' + cardCtrl.expiryInput[0].name + '"]';
+      }
+      if (cardCtrl.cvcInput && cardCtrl.cvcInput.length > 0) {
+        opts.formSelectors.cvcInput = 'input[name="' + cardCtrl.cvcInput[0].name + '"]';
+      }
+      if (cardCtrl.nameInput && cardCtrl.nameInput.length > 0) {
+        opts.formSelectors.nameInput = 'input[name="' + cardCtrl.nameInput[0].name + '"]';
+      }
+
+      $(element).card(opts);
     }
   };
 })
@@ -84,7 +97,10 @@ angular.module('gavruk.card', [])
         if (oldVal === newVal && !newVal) {
           return;
         }
-        element.trigger('change');
+        
+        var evt = document.createEvent('HTMLEvents');
+        evt.initEvent('keyup', false, true);
+        element[0].dispatchEvent(evt);
       });
     }
   };
@@ -107,7 +123,10 @@ angular.module('gavruk.card', [])
         if (oldVal === newVal && !newVal) {
           return;
         }
-        element.trigger('change');
+
+        var evt = document.createEvent('HTMLEvents');
+        evt.initEvent('keyup', false, true);
+        element[0].dispatchEvent(evt);
       });
     }
   };
@@ -130,7 +149,10 @@ angular.module('gavruk.card', [])
         if (oldVal === newVal && !newVal) {
           return;
         }
-        element.trigger('change');
+        
+        var evt = document.createEvent('HTMLEvents');
+        evt.initEvent('keyup', false, true);
+        element[0].dispatchEvent(evt);
       });
     }
   };
@@ -153,7 +175,10 @@ angular.module('gavruk.card', [])
         if (oldVal === newVal && !newVal) {
           return;
         }
-        element.trigger('change');
+        
+        var evt = document.createEvent('HTMLEvents');
+        evt.initEvent('keyup', false, true);
+        element[0].dispatchEvent(evt);
       });
     }
   };

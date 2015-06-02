@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Angular-Card Example</title>
-
-    <link href="../bower_components/card/lib/css/card.css" rel="stylesheet" />
   </head>
   <body data-ng-app="app" data-ng-controller="ExampleCtrl">
 
@@ -19,14 +17,14 @@
       >
 
       <div>
-          <input placeholder="Card number" type="text" card-number data-ng-model="card.number" />
+          <input placeholder="Card number" type="text" name="CardNumber" card-number data-ng-model="card.number" />
 
-          <input placeholder="Full name" type="text" card-name data-ng-model="card.name" />
+          <input placeholder="Full name" type="text" name="CardName" card-name data-ng-model="card.name" />
       </div>
       <div>
-          <input placeholder="MM / YYYY" type="text" card-expiry data-ng-model="card.expiry" />
+          <input placeholder="MM / YYYY" type="text" name="CardExpiry" card-expiry data-ng-model="card.expiry" />
 
-          <input placeholder="CVC" type="text" card-cvc data-ng-model="card.cvc" />
+          <input placeholder="CVC" type="text" name="CardCvc" card-cvc data-ng-model="card.cvc" />
 
           <input type="button" value="Change card" data-ng-click="changeCard()" />
           <input type="button" value="Clear" data-ng-click="clear()" />
@@ -37,7 +35,7 @@
     <div id="card-container"></div>
 
     <script src="../bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-    <script src="../bower_components/card/lib/js/card.js" type="text/javascript"></script>
+    <script src="../bower_components/card/lib/js/jquery.card.js" type="text/javascript"></script>
     <script src="../bower_components/angular/angular.min.js" type="text/javascript"></script>
     <script src="../src/card.js" type="text/javascript"></script>
     <script src="example.js" type="text/javascript"></script>
