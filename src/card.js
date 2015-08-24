@@ -1,9 +1,9 @@
 angular.module('gavruk.card', [])
 
-.controller('CardCtrl', function($scope) {
-})
+.controller('CardCtrl', ['$scope', function($scope) {
+}])
 
-.directive('card', function ($compile) {
+.directive('card', ['$compile', function ($compile) {
   return {
     restrict: 'A',
     scope: {
@@ -78,9 +78,9 @@ angular.module('gavruk.card', [])
       $(element).card(opts);
     }
   };
-})
+}])
 
-.directive('cardNumber', function($compile) {
+.directive('cardNumber', ['$compile', function($compile) {
   return {
     restrict: 'A',
     scope: {
@@ -97,16 +97,16 @@ angular.module('gavruk.card', [])
         if (oldVal === newVal && !newVal) {
           return;
         }
-        
+
         var evt = document.createEvent('HTMLEvents');
         evt.initEvent('keyup', false, true);
         element[0].dispatchEvent(evt);
       });
     }
   };
-})
+}])
 
-.directive('cardName', function($compile) {
+.directive('cardName', ['$compile', function($compile) {
   return {
     restrict: 'A',
     scope: {
@@ -130,9 +130,9 @@ angular.module('gavruk.card', [])
       });
     }
   };
-})
+}])
 
-.directive('cardExpiry', function($compile) {
+.directive('cardExpiry', ['$compile', function($compile) {
   return {
     restrict: 'A',
     scope: {
@@ -149,16 +149,16 @@ angular.module('gavruk.card', [])
         if (oldVal === newVal && !newVal) {
           return;
         }
-        
+
         var evt = document.createEvent('HTMLEvents');
         evt.initEvent('keyup', false, true);
         element[0].dispatchEvent(evt);
       });
     }
   };
-})
+}])
 
-.directive('cardCvc', function($compile) {
+.directive('cardCvc', ['$compile', function($compile) {
   return {
     restrict: 'A',
     scope: {
@@ -175,11 +175,11 @@ angular.module('gavruk.card', [])
         if (oldVal === newVal && !newVal) {
           return;
         }
-        
+
         var evt = document.createEvent('HTMLEvents');
         evt.initEvent('keyup', false, true);
         element[0].dispatchEvent(evt);
       });
     }
   };
-});
+}]);
