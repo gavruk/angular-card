@@ -15,10 +15,11 @@ http://jessepollak.github.io/card/
 
 ##Usage
 
-###`name` is required for inputs (you can use any unique name)
+###`name` is required for form and inputs (you can use any unique name)
 
 ```html
 <form action="#"
+  name="cardForm"
   data-card
   data-width="500"
   data-card-container="#card-container"

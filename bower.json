@@ -1,6 +1,6 @@
 {
   "name": "angular-card",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "authors": [
     "Sergey Gavruk <svgavruk@gmail.com>"
   ],
@@ -13,7 +13,7 @@
     "credit"
   ],
   "dependencies": {
-    "card": ">=0.1.4",
+    "card": ">=1.1.0",
     "angular": "~1.3.8"
   },
   "license": "MIT",

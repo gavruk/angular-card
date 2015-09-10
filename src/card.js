@@ -34,8 +34,9 @@ angular.module('gavruk.card', [])
       var messages = angular.extend(defaultMessages, scope.messages);
       var options = angular.extend(defaultOptions, scope.options);
 
-
       var opts = {
+        form: 'form[name=' + attributes.name + ']',
+
         // a selector or jQuery object for the container
         // where you want the card to appear
         container: scope.cardContainer, // *required*
@@ -75,7 +76,7 @@ angular.module('gavruk.card', [])
         opts.formSelectors.nameInput = 'input[name="' + cardCtrl.nameInput[0].name + '"]';
       }
 
-      $(element).card(opts);
+      new Card(opts);
     }
   };
 }])
