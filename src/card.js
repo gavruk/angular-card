@@ -52,7 +52,7 @@ angular.module('gavruk.card', [])
         },
 
         // Default values for rendered fields - options
-        values: {
+        placeholders: {
           number: values.number,
           name: values.name,
           expiry: values.expiry,
