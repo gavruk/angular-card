@@ -33,7 +33,7 @@ angular.module('app', ['gavruk.card'])
   };
 
 
-  $scope.cardValues = {
+  $scope.cardPlaceholders = {
     name: 'Your Full Name',
     number: 'xxxx xxxx xxxx xxxx',
     expiry: 'MM/YY',

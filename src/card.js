@@ -11,13 +11,13 @@
       scope: {
         cardContainer: '@', // required
         width: '@',
-        values: '=',
+        placeholders: '=',
         options: '=',
         messages: '=',
       },
       controller: 'CardCtrl',
       link: function (scope, element, attributes, cardCtrl) {
-        var defaultValues = {
+        var defaultPlaceholders = {
           number: '•••• •••• •••• ••••',
           name: 'Full Name',
           expiry: '••/••',
@@ -32,7 +32,7 @@
           formatting: true
         };
 
-        var values = angular.extend(defaultValues, scope.values);
+        var placeholders = angular.extend(defaultPlaceholders, scope.placeholders);
         var messages = angular.extend(defaultMessages, scope.messages);
         var options = angular.extend(defaultOptions, scope.options);
 
@@ -53,12 +53,12 @@
             monthYear: messages.monthYear
           },
 
-          // Default values for rendered fields - options
-          values: {
-            number: values.number,
-            name: values.name,
-            expiry: values.expiry,
-            cvc: values.cvc
+          // Default placeholders for rendered fields - options
+          placeholders: {
+            number: placeholders.number,
+            name: placeholders.name,
+            expiry: placeholders.expiry,
+            cvc: placeholders.cvc
           },
 
           formatting: options.formatting, // optional - default true
