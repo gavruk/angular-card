@@ -23,7 +23,7 @@ http://jessepollak.github.io/card/
   data-card
   data-width="500"
   data-card-container="#card-container"
-  data-values="cardValues"
+  data-placeholders="cardPlaceholders"
   data-options="cardOptions"
   data-messages="cardMessages">
 
@@ -55,7 +55,7 @@ angular.module('app', ['gavruk.card'])
     cvc: '123'
   };
 
-  $scope.cardValues = {
+  $scope.cardPlaceholders = {
     name: 'Your Full Name',
     number: 'xxxx xxxx xxxx xxxx',
     expiry: 'MM/YY',
