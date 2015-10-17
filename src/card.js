@@ -3,9 +3,10 @@
   angular
     .module('gavruk.card', [])
 
-  .controller('CardCtrl', function ($scope) {})
+  .controller('CardCtrl', ['$scope', function ($scope) {
+  }])
 
-  .directive('card', function ($compile) {
+  .directive('card', ['$compile', function ($compile) {
     return {
       restrict: 'A',
       scope: {
@@ -81,9 +82,9 @@
         new Card(opts);
       }
     };
-  })
+  }])
 
-  .directive('cardNumber', function ($compile) {
+  .directive('cardNumber', ['$compile', function ($compile) {
     return {
       restrict: 'A',
       scope: {
@@ -110,9 +111,9 @@
         });
       }
     };
-  })
+  }])
 
-  .directive('cardName', function ($compile) {
+  .directive('cardName', ['$compile', function ($compile) {
     return {
       restrict: 'A',
       scope: {
@@ -139,9 +140,9 @@
         });
       }
     };
-  })
+  }])
 
-  .directive('cardExpiry', function ($compile) {
+  .directive('cardExpiry', ['$compile', function ($compile) {
     return {
       restrict: 'A',
       scope: {
@@ -168,9 +169,9 @@
         });
       }
     };
-  })
+  }])
 
-  .directive('cardCvc', function ($compile) {
+  .directive('cardCvc', ['$compile', function ($compile) {
     return {
       restrict: 'A',
       scope: {
@@ -197,6 +198,6 @@
         });
       }
     };
-  });
+  }]);
 
 })(window, window.document, window.Card, window.angular);
