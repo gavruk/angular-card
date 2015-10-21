@@ -38,7 +38,7 @@
         var options = angular.extend(defaultOptions, scope.options);
 
         var opts = {
-          form: '[name=' + attributes.name + ']',
+          form: '[name="' + attributes.name + '"]',
 
           // a selector or jQuery object for the container
           // where you want the card to appear
