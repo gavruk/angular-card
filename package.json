@@ -1,6 +1,6 @@
 {
   "name": "angular-card",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Angular directive for card https://github.com/jessepollak/card",
   "main": "src/card.js",
   "directories": {
