@@ -1,0 +1,31 @@
+{
+  "name": "angular-card",
+  "version": "0.3.4",
+  "description": "Angular directive for card https://github.com/jessepollak/card",
+  "main": "src/card.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://duluca@github.com/duluca/angular-card.git"
+  },
+  "keywords": [
+    "angular",
+    "credit",
+    "card"
+  ],
+  "author": "Sergey Gavruk <svgavruk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duluca/angular-card/issues"
+  },
+  "homepage": "https://github.com/duluca/angular-card#readme",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "card": "^1.1.0"
+  }
+}
