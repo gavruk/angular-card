@@ -1,3 +1,5 @@
+var hasRequire = typeof require === 'function';
+
 (function (window, document, Card, angular, undefined) {
   'use strict';
   angular
@@ -200,4 +202,8 @@
     };
   }]);
 
-})(window, window.document, window.Card, window.angular);
+})(window, window.document, hasRequire ? require('card') : window.Card, hasRequire ? require('angular') : window.angular);
+
+if(module) {
+  module.exports = 'gavruk.card';
+}
