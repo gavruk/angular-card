@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://duluca@github.com/duluca/angular-card.git"
+    "url": "git+https://gavruk@github.com/gavruk/angular-card.git"
   },
   "keywords": [
     "angular",
@@ -21,11 +21,11 @@
   "author": "Sergey Gavruk <svgavruk@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/duluca/angular-card/issues"
+    "url": "https://github.com/gavruk/angular-card/issues"
   },
-  "homepage": "https://github.com/duluca/angular-card#readme",
+  "homepage": "https://github.com/gavruk/angular-card#readme",
   "dependencies": {
-    "angular": "^1.4.7",
-    "card": "~1.0.x"
+    "card": "~1.2.2",
+    "angular": "~1.4.8"
   }
 }
