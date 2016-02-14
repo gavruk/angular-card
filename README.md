@@ -11,7 +11,11 @@ http://jessepollak.github.io/card/
 
 ## Installation
 
+### bower
 `bower install angular-card`
+
+### npm
+`npm install angular-card`
 
 ##Usage
 
