@@ -204,6 +204,6 @@ var hasRequire = typeof require === 'function';
 
 })(window, window.document, hasRequire ? require('card') : window.Card, hasRequire ? require('angular') : window.angular);
 
-if(module) {
+if(typeof module !== 'undefined') {
   module.exports = 'gavruk.card';
 }
