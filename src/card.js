@@ -1,4 +1,4 @@
-var hasRequire = typeof require === 'function';
+var hasRequire = window && window.angular ? false : typeof require === 'function';
 
 (function (window, document, Card, angular, undefined) {
   'use strict';
