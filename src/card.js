@@ -8,7 +8,7 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
   .controller('CardCtrl', ['$scope', function ($scope) {
   }])
 
-  .directive('card', ['$compile', function ($compile) {
+  .directive('card', ['$timeout', function ($timeout) {
     return {
       restrict: 'A',
       scope: {
@@ -81,7 +81,11 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
           opts.formSelectors.nameInput = 'input[name="' + cardCtrl.nameInput[0].name + '"]';
         }
 
-        new Card(opts);
+        //Don't initialize card until angular has had a chance to update the DOM with any interpolated bindings
+        $timeout()
+            .then(function () {
+              new Card(opts);
+            });
       }
     };
   }])
