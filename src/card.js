@@ -48,7 +48,7 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
 
           formSelectors: {},
 
-          width: scope.width || 350,
+          width: options.width,
 
           // Strings for translation - optional
           messages: {
@@ -67,6 +67,8 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
           formatting: options.formatting, // optional - default true
           debug: options.debug // if true, will log helpful messages for setting up Card
         };
+
+        opt.width = opt.width || scope.width || 350;
 
         if (cardCtrl.numberInput && cardCtrl.numberInput.length > 0) {
           opts.formSelectors.numberInput = 'input[name="' + cardCtrl.numberInput[0].name + '"]';
