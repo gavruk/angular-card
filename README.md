@@ -20,6 +20,7 @@ http://jessepollak.github.io/card/
 ##Usage
 
 ###`name` is required for form and inputs (you can use any unique name)
+###`width` is optional, it can be set on the element or the options object (defaults to 350)
 
 ```html
 <form action="#"
@@ -73,7 +74,8 @@ angular.module('app', ['gavruk.card'])
 
   $scope.cardOptions = {
     debug: false,
-    formatting: true
+    formatting: true,
+    width: 500 //optional
   };
 
 }]);
