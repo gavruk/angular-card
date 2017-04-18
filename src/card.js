@@ -68,7 +68,7 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
           debug: options.debug // if true, will log helpful messages for setting up Card
         };
 
-        opt.width = opt.width || scope.width || 350;
+        opts.width = opts.width || scope.width || 350;
 
         if (cardCtrl.numberInput && cardCtrl.numberInput.length > 0) {
           opts.formSelectors.numberInput = 'input[name="' + cardCtrl.numberInput[0].name + '"]';
