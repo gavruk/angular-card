@@ -45,8 +45,17 @@ http://jessepollak.github.io/card/
     <input type="button" value="Change card" data-ng-click="changeCard()" />
     <input type="button" value="Clear" data-ng-click="clear()" />
   </div>
-  
+
 </form>
+```
+
+#### Using multiple fields for card expiry
+
+Simply use 2 input fields for the expiry, and pass either `month`, or `year` to the directive.
+
+```js
+<input placeholder="MM" type="text" name="CardExpiryMonth" card-expiry="month" data-ng-model="card.expiryMonth" />
+<input placeholder="YYYY" type="text" name="CardExpiryYear" card-expiry="year" data-ng-model="card.expiryYear" />
 ```
 
 ```js
