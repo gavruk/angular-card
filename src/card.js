@@ -73,8 +73,10 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
         if (cardCtrl.numberInput && cardCtrl.numberInput.length > 0) {
           opts.formSelectors.numberInput = 'input[name="' + cardCtrl.numberInput[0].name + '"]';
         }
-        if (cardCtrl.expiryInput && cardCtrl.expiryInput.length > 0) {
-          opts.formSelectors.expiryInput = 'input[name="' + cardCtrl.expiryInput[0].name + '"]';
+        if (angular.isDefined(cardCtrl.expiryInput.combined)) {
+            opts.formSelectors.expiryInput = 'input[name="' + cardCtrl.expiryInput.combined[0].name + '"]';
+        } else if (angular.isDefined(cardCtrl.expiryInput.month) && angular.isDefined(cardCtrl.expiryInput.year)) {
+            opts.formSelectors.expiryInput = 'input[name="' + cardCtrl.expiryInput.month[0].name + '"], input[name="' + cardCtrl.expiryInput.year[0].name + '"]';
         }
         if (cardCtrl.cvcInput && cardCtrl.cvcInput.length > 0) {
           opts.formSelectors.cvcInput = 'input[name="' + cardCtrl.cvcInput[0].name + '"]';
@@ -154,7 +156,8 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
     return {
       restrict: 'A',
       scope: {
-        ngModel: '='
+        ngModel: '=',
+        type: '@cardExpiry'
       },
       require: [
         '^card',
@@ -162,7 +165,11 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
       ],
       link: function (scope, element, attributes, ctrls) {
         var cardCtrl = ctrls[0];
-        cardCtrl.expiryInput = element;
+        var expiryType = scope.type || 'combined';
+        if (angular.isUndefined(cardCtrl.expiryInput)) {
+            cardCtrl.expiryInput = {};
+        }
+        cardCtrl.expiryInput[expiryType] = element;
         scope.$watch('ngModel', function (newVal, oldVal) {
           if (!oldVal && !newVal) {
             return;
