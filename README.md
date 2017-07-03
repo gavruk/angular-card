@@ -17,10 +17,10 @@ http://jessepollak.github.io/card/
 ### npm
 `npm install angular-card`
 
-##Usage
+## Usage
 
-###`name` is required for form and inputs (you can use any unique name)
-###`width` is optional, it can be set on the element or the options object (defaults to 350)
+### `name` is required for form and inputs (you can use any unique name)
+### `width` is optional, it can be set on the element or the options object (defaults to 350)
 
 ```html
 <form action="#"
