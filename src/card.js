@@ -86,8 +86,7 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
         }
 
         //Don't initialize card until angular has had a chance to update the DOM with any interpolated bindings
-        $timeout()
-            .then(function () {
+        $timeout(function () {
               new Card(opts);
             });
       }
