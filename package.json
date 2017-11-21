@@ -25,7 +25,12 @@
   },
   "homepage": "https://github.com/gavruk/angular-card#readme",
   "dependencies": {
-    "card": "^2.4.0",
-    "angular": "~1.4.8"
+    "card": "^2.4.0"
+  },
+  "peerDependencies": {
+    "angular": "^1.4.8"
+  },
+  "devDependencies": {
+    "angular": "^1.4.8"
   }
 }
