@@ -81,8 +81,11 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
         if (cardCtrl.cvcInput && cardCtrl.cvcInput.length > 0) {
           opts.formSelectors.cvcInput = 'input[name="' + cardCtrl.cvcInput[0].name + '"]';
         }
-        if (cardCtrl.nameInput && cardCtrl.nameInput.length > 0) {
-          opts.formSelectors.nameInput = 'input[name="' + cardCtrl.nameInput[0].name + '"]';
+
+        if (angular.isDefined(cardCtrl.nameInput.combined)) {
+          opts.formSelectors.nameInput = 'input[name="' + cardCtrl.nameInput.combined[0].name + '"]';
+        } else if (angular.isDefined(cardCtrl.nameInput.first) && angular.isDefined(cardCtrl.nameInput.last)) {
+          opts.formSelectors.nameInput = 'input[name="' + cardCtrl.nameInput.first[0].name + '"], input[name="' + cardCtrl.nameInput.last[0].name + '"]';
         }
 
         //Don't initialize card until angular has had a chance to update the DOM with any interpolated bindings
@@ -127,7 +130,8 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
     return {
       restrict: 'A',
       scope: {
-        ngModel: '='
+        ngModel: '=',
+        type: '@cardName'
       },
       require: [
         '^card',
@@ -135,7 +139,11 @@ var hasRequire = window && window.angular ? false : typeof require === 'function
       ],
       link: function (scope, element, attributes, ctrls) {
         var cardCtrl = ctrls[0];
-        cardCtrl.nameInput = element;
+        var nameType = scope.type || 'combined';
+        if (angular.isUndefined(cardCtrl.nameInput)) {
+          cardCtrl.nameInput = {};
+        }
+        cardCtrl.nameInput[nameType] = element;
         scope.$watch('ngModel', function (newVal, oldVal) {
           if (!oldVal && !newVal) {
             return;
