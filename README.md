@@ -78,11 +78,19 @@ angular.module('app', ['gavruk.card'])
 }]);
 ```
 
-#### Using multiple fields for card expiry
+#### Using multiple fields
 
 Simply use 2 input fields for the expiry, and pass either `month`, or `year` to the directive.
 
 ```js
 <input placeholder="MM" type="text" name="CardExpiryMonth" card-expiry="month" data-ng-model="card.expiryMonth" />
 <input placeholder="YYYY" type="text" name="CardExpiryYear" card-expiry="year" data-ng-model="card.expiryYear" />
+```
+
+
+Simply use 2 input fields for the name, and pass either `first`, or `last` to the directive.
+
+```js
+<input placeholder="CARD" type="text" name="CardFirstName" card-name="first" data-ng-model="card.firstName" />
+<input placeholder="HOLDER" type="text" name="CardLastName" card-name="last" data-ng-model="card.lastName" />
 ```
